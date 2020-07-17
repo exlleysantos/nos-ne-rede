@@ -7,12 +7,14 @@ class ForumSchema extends Schema {
   up () {
     this.create('forums', (table) => {
       table.increments()
-      table.timestamps()
+      table.string('title').notNullable();
+      table.string('description').notNullable();
+      table.timestamps();
     })
   }
 
   down () {
-    this.drop('forums')
+    this.drop('forums');
   }
 }
 

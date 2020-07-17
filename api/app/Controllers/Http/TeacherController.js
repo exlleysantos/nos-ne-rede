@@ -1,5 +1,7 @@
 'use strict'
 
+const Teacher = use("App/Models/TeacherController");
+
 /** @typedef {import('@adonisjs/framework/src/Request')} Request */
 /** @typedef {import('@adonisjs/framework/src/Response')} Response */
 /** @typedef {import('@adonisjs/framework/src/View')} View */
@@ -17,19 +19,8 @@ class TeacherController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async index ({ request, response, view }) {
-  }
-
-  /**
-   * Render a form to be used for creating a new teacher.
-   * GET teachers/create
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async create ({ request, response, view }) {
+  async index () {
+    return await Teacher.all();
   }
 
   /**
@@ -40,7 +31,10 @@ class TeacherController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store ({ request }) {
+    const data = request.only(["ocid", "lattes"]);
+      
+    return await Teacher.create(data);
   }
 
   /**
@@ -52,30 +46,8 @@ class TeacherController {
    * @param {Response} ctx.response
    * @param {View} ctx.view
    */
-  async show ({ params, request, response, view }) {
-  }
-
-  /**
-   * Render a form to update an existing teacher.
-   * GET teachers/:id/edit
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   * @param {View} ctx.view
-   */
-  async edit ({ params, request, response, view }) {
-  }
-
-  /**
-   * Update teacher details.
-   * PUT or PATCH teachers/:id
-   *
-   * @param {object} ctx
-   * @param {Request} ctx.request
-   * @param {Response} ctx.response
-   */
-  async update ({ params, request, response }) {
+  async show ({ params }) {
+    return  await Teacher.findOrFail(params.id);
   }
 
   /**
@@ -86,7 +58,10 @@ class TeacherController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async destroy ({ params, request, response }) {
+  async destroy ({ params }) {
+    const teacher = await Teacher.findOrFail(params.id);
+
+    await teacher.delete();
   }
 }
 
