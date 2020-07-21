@@ -7,6 +7,12 @@ class ContentSchema extends Schema {
   up () {
     this.create('contents', (table) => {
       table.increments();
+      table.integer('user_id')
+      .references('id')
+      .inTable('users')
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
+
       table.string('title').notNullable();
       table.string('description').notNullable();
 
@@ -16,7 +22,7 @@ class ContentSchema extends Schema {
   }
 
   down () {
-    this.drop('contents')
+    this.drop('contents');
   }
 }
 
