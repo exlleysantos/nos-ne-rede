@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Row, Col, Card, Button, Form } from 'react-bootstrap';
 
-function App() {
+function Login() {
   return (
     <Container fluid style={{ paddingTop: '50px' }}>
       <Row className="justify-content-md-center">
@@ -34,7 +35,9 @@ function App() {
 
                 <Form.Group as={Row} style={{ padding: '10px' }}>
                   <Col sm={{span: 8, offset: 2}}>
+                  <Link to="/dashboard">
                     <Button type="submit" size="md" block>Entrar</Button>
+                  </Link>
                   </Col>
                 </Form.Group>
               </Form>
@@ -50,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default Login;
