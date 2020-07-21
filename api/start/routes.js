@@ -14,7 +14,17 @@
 */
 
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
-const Route = use('Route')
+const Route = use('Route');
+
+Route.group(() => {
+  Route.resource("users", "UserController").apiOnly();
+  Route.resource("teachers", "TeacherController").apiOnly();
+  Route.resource("tags", "TagController").apiOnly();
+  Route.resource("contents", "ContentController").apiOnly();
+  Route.resource("forums", "ForumController").apiOnly();
+});
+
+Route.post('/sessions', 'SessionController.create');
 
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
