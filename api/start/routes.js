@@ -24,6 +24,8 @@ Route.group(() => {
   Route.resource("forums", "ForumController").apiOnly();
 });
 
+Route.post('/sessions', 'SessionController.create');
+
 Route.get('/', () => {
   return { greeting: 'Hello world in JSON' }
 })
