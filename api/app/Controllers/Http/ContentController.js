@@ -31,7 +31,10 @@ class ContentController {
    * @param {Request} ctx.request
    * @param {Response} ctx.response
    */
-  async store ({ request, response }) {
+  async store ({ request }) {
+    const data = request.only(["title", "description", "type"]);
+    
+    return await Content.create(data);
   }
 
   /**
