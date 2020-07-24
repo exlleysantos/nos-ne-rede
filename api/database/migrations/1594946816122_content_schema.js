@@ -16,7 +16,7 @@ class ContentSchema extends Schema {
       table.string('title').notNullable();
       table.string('description').notNullable();
 
-      table.enu('type', ['activity', 'content', 'archive', 'course']).notNullable();
+      table.enu('type', ['Atividade', 'Conteudo', 'Arquivo', 'Curso']).notNullable();
       table.timestamps();
     })
   }
