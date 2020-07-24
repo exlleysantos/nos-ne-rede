@@ -13,9 +13,28 @@ export default function Dashboard() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [type, setType] = useState('');
+
   useEffect(() => {
     api.get('contents').then(response => setContents(response.data))
   });
+
+  async function handleNewContent(e){
+    e.preventDefault();
+    const data = {
+        title,
+        description,
+        type
+    };
+
+    try{
+        await api.post('contents', data);
+    } catch{
+        alert("Não foi Possível Criar postagem");
+    }
+  }
 
   return (
     <>
@@ -78,9 +97,9 @@ export default function Dashboard() {
               <ul style={{padding:'50px', color: '#000'}}>
                   {contents.map(content => (
                   <li style={{padding: '20px'}} key={content.id} >
-                      <strong>{content.title}</strong>
+                      <a href="" color="black"><h4>{content.title}</h4></a>
                       <p>{content.description}</p>
-                      <p>Marcador: {content.type === "content" ? "Conteúdo" : "Outro"}</p>
+                      <p>Marcador: <a href = "#">{content.type}</a></p>
                   </li>
                   ))}
                 </ul>
@@ -117,44 +136,31 @@ export default function Dashboard() {
           <Modal.Title>Criar Postagem</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
+          <Form onSubmit={handleNewContent}>
             <Form.Group controlId="formHorizontalTipo">
-              <Col sm={{span: 10, offset: 1}} >
-                <Form.Control as="select">
+              <Col sm={{padding: 12, span: 15, offset: 1}} >
+                <Form.Control as="select" value={type} onChange={e => setType(e.target.value)}>
                   <option>Conteúdo</option>
                   <option>Atividade</option>
                   <option>Arquivo</option>
                   <option>Curso</option>
                 </Form.Control>
               </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalTitulo">
-              <Col sm={{span: 10, offset: 1}}>
-                <Form.Control type="text" placeholder="Título" />
+              <Col sm={{span: 15, offset: 1}}>
+                <Form.Control type="text" placeholder="Título" value={title}  onChange={e => setTitle(e.target.value)}/>
               </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalDescricao">
-              <Col sm={{span: 10, offset: 1}}>
-                <Form.Control as="textarea" placeholder="Descrição" />
+              <Col sm={{span: 15, offset: 1}}>
+                <Form.Control as="textarea" placeholder="Descrição" onChange={e => setDescription(e.target.value)}/>
               </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} controlId="formHorizontalFoto">
-            <Col sm={{span: 10, offset: 1}}>
+              <Col sm={{span: 15, offset: 1}}>
                     <h6 style={{ textAlign: 'left', color: '#565656' }}>Escolher Arquivo</h6>
                     <input type="file" style={{ width: '100%', margin: '0px auto 0', background: '#fff', border: '1px solid #ddd' }} />
               </Col>
-            </Form.Group>
-
-            <Form.Group as={Row} style={{ padding: '10px' }}>
-              <Col sm={{span: 10, offset: 1}}>
+              <Col sm={{span: 15, offset: 1}}>
                 <Button type="submit" size="md" block>Criar</Button>
               </Col>
             </Form.Group>
           </Form>
-
         </Modal.Body>
       </Modal>
     </>    
