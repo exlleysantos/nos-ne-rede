@@ -1,14 +1,14 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
 
 import Routes from './routes';
+import { GlobalStyles } from './styles/GlobalStyles';
+import { CombineProviders } from './store';
 
-function App() {
-  return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
-  );
-}
+const App = () => (
+	<CombineProviders>
+		<Routes />
+		<GlobalStyles />
+	</CombineProviders>
+);
 
 export default App;
