@@ -1,61 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Avatar from 'react-avatar';
+import React, { useState } from 'react';
 
+import UserProfile from '../../components/UserProfile';
 import Box from '../../components/Box';
-import Button from '../../components/Button';
-import {
-	Container,
-	MainInfos,
-	Name,
-	SchoolName,
-	Tag,
-	Nickname,
-	MobileFooter,
-	BioInfos,
-} from './styles';
-
-import { HiOutlineChatAlt, HiOutlineMail } from 'react-icons/hi';
+import { Container, BioInfos } from './styles';
 
 // import api from '../../services/api';
 
 const Profile = () => {
+	const [user] = useState({ name: 'Joca Doido' });
+
 	return (
 		<Container>
 			<Box>
-				<MainInfos>
-					<Avatar size={150} name='Julie Howard' round='5px' maxInitials={2} />
-
-					<div className='infos'>
-						<div className='row'>
-							<Name>Julie Howard</Name>
-							<Tag>Prof. 5° ano</Tag>
-						</div>
-
-						<div className='row'>
-							<Nickname>@juliahoward</Nickname>
-						</div>
-
-						<div className='row'>
-							<Button icon={HiOutlineChatAlt}>Mensagem</Button>
-							<Button icon={HiOutlineMail} isGhost>
-								Email
-							</Button>
-						</div>
-
-						<div className='row'>
-							<SchoolName>Colégio Menino Deus</SchoolName>
-						</div>
-					</div>
-				</MainInfos>
-				<MobileFooter>
-					<div className='buttons'>
-						<Button icon={HiOutlineChatAlt}>Mensagem</Button>
-						<Button icon={HiOutlineMail} isGhost>
-							Email
-						</Button>
-					</div>
-				</MobileFooter>
+				<UserProfile data={user} />
 			</Box>
 
 			<Box>

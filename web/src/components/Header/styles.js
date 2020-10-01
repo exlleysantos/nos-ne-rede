@@ -7,6 +7,7 @@ export const Container = styled.header`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	box-shadow: rgba(149, 157, 165, 0.1) 10px 8px 24px;
 
 	& > div {
 		display: flex;

@@ -19,10 +19,9 @@ const GlobalStyles = createGlobalStyle`
         --body-1: #6D6D6D;
 
         /** other */
-        --bg-1: #F1F2F3;
+        --bg-1: #F8F8F8;
         --bg-2: #FFFFFF;
         --bg-3: #FAFAFC;
-        --box-shadow-1: 0px 9px 9px 0 #BFC7CD;
     }
 
     * {

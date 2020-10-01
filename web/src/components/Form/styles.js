@@ -51,6 +51,7 @@ export const InputContainer = styled.div`
 		transition: border-color 150ms;
 		color: var(--body-1);
 		transition: 300ms;
+		background: transparent;
 		
 		&::placeholder {
 			color: var(--body-1);

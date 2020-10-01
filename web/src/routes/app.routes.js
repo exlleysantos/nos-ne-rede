@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 
 import Profile from '../pages/Profile';
+import Educators from '../pages/Educators';
 import Error404 from '../pages/404';
 
 import Layout from '../components/Layout';
@@ -21,6 +22,12 @@ const AuthStack = () => {
 				<Route exatc path='/profile'>
 					<Layout>
 						<Profile />
+					</Layout>
+				</Route>
+
+				<Route exatc path='/educators'>
+					<Layout>
+						<Educators />
 					</Layout>
 				</Route>
 
