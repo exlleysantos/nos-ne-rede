@@ -52,7 +52,7 @@ export const InputContainer = styled.div`
 		color: var(--body-1);
 		transition: 300ms;
 		background: transparent;
-		
+
 		&::placeholder {
 			color: var(--body-1);
 			font-size: 14px;
@@ -109,6 +109,8 @@ export const InputContainer = styled.div`
 `;
 
 export const CheckboxContainer = styled.div`
+	grid-column: span ${({ size }) => size || 1};
+
 	& > div {
 		display: flex;
 		align-items: center;
@@ -143,7 +145,7 @@ export const CheckboxContainer = styled.div`
 				transition: opacity 120ms;
 				opacity: 0;
 				border-radius: 100%;
-				background: #d8b1352e;
+				background: var(--purple-opacity);
 				z-index: 1;
 			}
 
