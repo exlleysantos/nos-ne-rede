@@ -1,9 +1,20 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
-	grid-area: NAV;
 	background: var(--bg-2);
 	overflow-y: auto;
+	width: 340px;
+	transition: left 300ms;
+	max-width: 100vw;
+
+	@media (max-width: 960px) {
+		height: 100vh;
+		position: absolute;
+		top: 0;
+		grid-area: none;
+		left: ${({ show }) => (show ? 0 : '-300%')};
+		z-index: 1001;
+	}
 `;
 
 export const PicContainer = styled.div`
@@ -105,6 +116,49 @@ export const Forum = styled.li`
 		css`
 			color: var(--purple);
 		`}
+`;
+
+export const ToggleMenu = styled.button`
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	width: 60px;
+	height: 60px;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	border: none;
+	background: none;
+	margin-right: 12px;
+	display: none;
+
+	&:hover {
+		& > svg {
+			color: var(--purple);
+		}
+	}
+
+	& > svg {
+		color: var(--heading-1);
+		font-size: 22px;
+	}
+
+	@media (max-width: 960px) {
+		display: flex;
+	}
+`;
+
+export const Overlay = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.3);
+	opacity: ${({ visible }) => (visible ? 1 : 0)};
+	pointer-events: ${({ visible }) => (visible ? 'all' : 'none')};
+	transition: opacity 200ms;
 `;
 
 export const collapseTheme = {

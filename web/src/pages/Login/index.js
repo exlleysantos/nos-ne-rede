@@ -1,12 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import Button from '../../components/Button';
 import { Form, Input } from '../../components/Form';
 import { Container, FormContainer, Title, SubTitle, Welcome } from './styles';
-
-import logo from '../../assets/logo.svg';
-import api from '../../services/api';
-import { login } from '../../services/auth';
 
 const Login = () => {
 	const formRef = useRef(null);

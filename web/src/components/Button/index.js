@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import Loader from 'react-loader-spinner';
 
 import { getButtonColor } from '../../utils/helpers/styles';
