@@ -23,8 +23,16 @@ export const Container = styled.button`
 		margin-bottom: -2px;
 	}
 
+	& > svg {
+		color: ${({ isGhost }) => (isGhost ? 'var(--purple)' : 'var(--white)')};
+		margin-right: 12px;
+		font-size: 22px;
+		min-width: 22px;
+	}
+
 	&:hover {
-		background-color: ${({ isGhost }) => isGhost ? 'var(--purple-opacity)' : 'var(--purple-hover)'};
+		background-color: ${({ isGhost }) =>
+			isGhost ? 'var(--purple-opacity)' : 'var(--purple-hover)'};
 	}
 
 	${({ disabled }) =>
@@ -34,6 +42,12 @@ export const Container = styled.button`
 			opacity: 0.7 !important;
 			user-select: none;
 		`}
+
+	@media(max-width: 350px) {
+		& > svg {
+			display: none;
+		}
+	}
 `;
 
 export const IconButtonContainer = styled.button`

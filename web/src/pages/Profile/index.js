@@ -1,20 +1,94 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import Avatar from 'react-avatar';
 
-import api from '../../services/api';
+import Box from '../../components/Box';
+import Button from '../../components/Button';
+import {
+	Container,
+	MainInfos,
+	Name,
+	SchoolName,
+	Tag,
+	Nickname,
+	MobileFooter,
+	BioInfos,
+} from './styles';
 
-/* Importação de Estilos CSS */
-import './styles.css';
-/* Importação de Imagens */
-import logoImg from '../../assets/logo.svg';
-/* Importação de Icone */
-import { FaPowerOff, FaTrash } from 'react-icons/fa';
+import { HiOutlineChatAlt, HiOutlineMail } from 'react-icons/hi';
+
+// import api from '../../services/api';
 
 const Profile = () => {
-    return (
-        <h1>PROFILE</h1>
-    )
-}
+	return (
+		<Container>
+			<Box>
+				<MainInfos>
+					<Avatar size={150} name='Julie Howard' round='5px' maxInitials={2} />
+
+					<div className='infos'>
+						<div className='row'>
+							<Name>Julie Howard</Name>
+							<Tag>Prof. 5° ano</Tag>
+						</div>
+
+						<div className='row'>
+							<Nickname>@juliahoward</Nickname>
+						</div>
+
+						<div className='row'>
+							<Button icon={HiOutlineChatAlt}>Mensagem</Button>
+							<Button icon={HiOutlineMail} isGhost>
+								Email
+							</Button>
+						</div>
+
+						<div className='row'>
+							<SchoolName>Colégio Menino Deus</SchoolName>
+						</div>
+					</div>
+				</MainInfos>
+				<MobileFooter>
+					<div className='buttons'>
+						<Button icon={HiOutlineChatAlt}>Mensagem</Button>
+						<Button icon={HiOutlineMail} isGhost>
+							Email
+						</Button>
+					</div>
+				</MobileFooter>
+			</Box>
+
+			<Box>
+				<BioInfos>
+					<div>
+						<header>
+							<h3>Interesses</h3>
+						</header>
+						<p>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, in pellentesque
+							tempus felis, sociis elit, euismod enim, tincidunt duis.
+						</p>
+					</div>
+
+					<div>
+						<header>
+							<h3>Disciplinas que ministra</h3>
+						</header>
+						<p>Matemática e física.</p>
+					</div>
+
+					<div>
+						<header>
+							<h3>ORCID</h3>
+
+							<button>VER</button>
+						</header>
+					</div>
+				</BioInfos>
+			</Box>
+		</Container>
+	);
+};
 
 export default Profile;
 

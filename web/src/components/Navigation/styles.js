@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
 	background: var(--bg-2);
 	overflow-y: auto;
-	width: 340px;
+	width: 380px;
 	transition: left 300ms;
 	max-width: 100vw;
 

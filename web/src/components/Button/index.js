@@ -5,7 +5,7 @@ import { getButtonColor } from '../../utils/helpers/styles';
 
 import { Container, IconButtonContainer } from './styles';
 
-const Button = ({ children, color, variant, size, loading, disabled, ...rest }) => {
+const Button = ({ children, color, icon: Icon, isGhost, size, loading, disabled, ...rest }) => {
 	const ref = useRef(null);
 
 	const onClick = (e) => {
@@ -21,21 +21,22 @@ const Button = ({ children, color, variant, size, loading, disabled, ...rest }) 
 			{...rest}
 			ref={ref}
 			disabled={disabled || loading}
-			color={color || 'primary'}
-			variant={variant || 'default'}
 			size={size}
+			isGhost={isGhost}
 			onClick={onClick}>
 			{loading ? (
 				<Loader
 					type='TailSpin'
-					color={getButtonColor(color || 'primary', variant, 'text')}
+					color={isGhost ? '#8D45E8' : '#FFFFFF'}
 					height={21}
 					width={21}
 					timeout={0}
 					className='loader'
 				/>
 			) : (
-				children
+				<>
+					{Icon && <Icon className='icon' />} {children}
+				</>
 			)}
 		</Container>
 	);
