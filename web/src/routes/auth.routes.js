@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-dom';
 
 import Login from '../pages/Login';
+import Register from '../pages/Register';
 import Error404 from '../pages/404';
 
 const forbiddenRoutes = ['/home', '/register'];
@@ -12,6 +13,10 @@ const AuthStack = () => {
 			<Switch>
 				<Route exact path='/'>
 					<Login />
+				</Route>
+
+				<Route exact path='/register'>
+					<Register />
 				</Route>
 
 				<Route exact path={forbiddenRoutes}>

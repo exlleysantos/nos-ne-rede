@@ -232,7 +232,7 @@ export const FileInputContainer = styled.div`
 	transition: 300ms;
 
 	&:hover {
-		background: ${({ error }) => (error ? 'var(--red)' : 'var(--purple)')};
+		/* background: ${({ error }) => (error ? 'var(--red)' : 'var(--purple)')}; */
 	}
 
 	& > svg {

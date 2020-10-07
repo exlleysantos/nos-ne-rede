@@ -7,7 +7,7 @@ import { Collapse } from 'react-collapse';
 
 import { InputContainer, Error, collapseTheme } from './styles';
 
-const Select = ({ name, label, size, ...rest }) => {
+const Select = ({ name, label, size, placeholder, ...rest }) => {
 	const selectRef = useRef(null);
 	const { fieldName, defaultValue, registerField, error } = useField(name);
 
@@ -42,7 +42,7 @@ const Select = ({ name, label, size, ...rest }) => {
 				defaultValue={rest.options.filter((option) => option.value === defaultValue)[0]}
 				ref={selectRef}
 				classNamePrefix='react-select'
-				placeholder={defaultValue || 'Selecione'}
+				placeholder={placeholder || 'Selecione'}
 			/>
 			<Collapse isOpened={!!error} theme={collapseTheme}>
 				<Error>{error}</Error>
