@@ -19,11 +19,12 @@ const CreateCourse = () => {
 
 	const handleSubmit = useCallback(async (formData) => {
 		try {
+			formData = { ...formData, withCertificate };
 			console.log(formData);
 		} catch (error) {
 			console.error(error);
 		}
-	}, []);
+	}, [withCertificate]);
 
 	return (
 		<Container>
@@ -49,7 +50,7 @@ const CreateCourse = () => {
 					<Input name='period' size={2} placeholder='Perído de insrição' />
 					<Input name='link' size={2} placeholder='Link' />
 
-					<Radio.Group title='Certificação: '>
+					<Radio.Group title='Certificação:' size={4}>
 						<Radio.Input
 							label='Sim'
 							checked={withCertificate}

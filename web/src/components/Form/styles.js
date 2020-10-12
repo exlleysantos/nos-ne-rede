@@ -396,6 +396,7 @@ export const RadioContainer = styled.div`
 export const RadioGroup = styled.div`
 	display: flex;
 	flex-direction: column;
+	grid-column: span ${({ size }) => size || 1};
 
 	& > label {
 		font-size: 18px;

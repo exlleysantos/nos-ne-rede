@@ -16,9 +16,9 @@ const Input = ({ checked, label, ...rest }) => {
 	);
 };
 
-const Group = ({ title, children, ...rest }) => {
+const Group = ({ title, size, children, ...rest }) => {
 	return (
-		<RadioGroup>
+		<RadioGroup size={size}>
 			<label>{title}</label>
 			<div>{children}</div>
 		</RadioGroup>
