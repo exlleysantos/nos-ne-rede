@@ -36,7 +36,7 @@ const Educators = () => {
 
 			<EducatorsList>
 				{educators.map((educator) => (
-					<li key={educator}>
+					<li key={educator.name}>
 						<UserProfile data={educator} />
 					</li>
 				))}

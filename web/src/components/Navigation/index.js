@@ -57,19 +57,19 @@ const Navigation = ({ showMenu, handleCloseMenu }) => {
 
 				<Menu>
 					<Link to={{ pathname: '/profile', state: { from: pathname } }}>
-						<LinkItem active={pathname.includes('profile')}>
+						<LinkItem onClick={handleCloseMenu} active={pathname.includes('profile')}>
 							<CgProfile /> Meu espaço
 						</LinkItem>
 					</Link>
 
 					<Link to={{ pathname: '/educators', state: { from: pathname } }}>
-						<LinkItem active={pathname.includes('educator')}>
+						<LinkItem onClick={handleCloseMenu} active={pathname.includes('educator')}>
 							<GoBook /> Educadores em Rede
 						</LinkItem>
 					</Link>
 
 					<Link to={{ pathname: '/educators', state: { from: pathname } }}>
-						<LinkItem active={pathname.includes('educator')}>
+						<LinkItem onClick={handleCloseMenu} active={pathname.includes('educator')}>
 							<AiOutlinePlayCircle /> (Auto) Formação continuada
 						</LinkItem>
 					</Link>
@@ -99,12 +99,12 @@ const Navigation = ({ showMenu, handleCloseMenu }) => {
 					</Collapse>
 
 					<Link to={{ pathname: '/share', state: { from: pathname } }}>
-						<LinkItem active={pathname.includes('share')}>
+						<LinkItem onClick={handleCloseMenu} active={pathname.includes('share')}>
 							<FiShare2 /> Compartilhe
 						</LinkItem>
 					</Link>
 
-					<LinkItem>
+					<LinkItem onClick={handleCloseMenu}>
 						<AiOutlineLogout /> Sair
 					</LinkItem>
 				</Menu>

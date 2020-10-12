@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { getButtonColor, getButtonColorOnHover } from '../../utils/helpers/styles';
 
 export const Container = styled.button`
 	grid-column: span ${({ size }) => size || 1};
@@ -66,7 +65,7 @@ export const IconButtonContainer = styled.button`
 	border-radius: 8px;
 
 	& > svg {
-		color: #FFF;
+		color: #fff;
 		font-size: 19px;
 	}
 

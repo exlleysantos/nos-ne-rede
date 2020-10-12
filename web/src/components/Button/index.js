@@ -1,8 +1,6 @@
 import React, { useRef } from 'react';
 import Loader from 'react-loader-spinner';
 
-import { getButtonColor } from '../../utils/helpers/styles';
-
 import { Container, IconButtonContainer } from './styles';
 
 const Button = ({ children, color, icon: Icon, isGhost, size, loading, disabled, ...rest }) => {
