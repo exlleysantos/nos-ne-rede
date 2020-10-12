@@ -6,6 +6,10 @@ import Educators from '../pages/Educators';
 import CreateCourse from '../pages/CreateCourse';
 import CreateForum from '../pages/CreateForum';
 import Forums from '../pages/Forums';
+import ShareOptions from '../pages/ShareOptions';
+import ShareLinks from '../pages/ShareLinks';
+import ShareDocs from '../pages/ShareDocs';
+import ShareClass from '../pages/ShareClass';
 import Error404 from '../pages/404';
 
 import Layout from '../components/Layout';
@@ -18,37 +22,61 @@ const AuthStack = () => {
 					<Redirect to='/home' />
 				</Route>
 
-				<Route exatc path='/home'>
+				<Route exact path='/home'>
 					<h1>HOME</h1>
 				</Route>
 
-				<Route exatc path='/profile'>
+				<Route exact path='/profile'>
 					<Layout>
 						<Profile />
 					</Layout>
 				</Route>
 
-				<Route exatc path='/educators'>
+				<Route exact path='/educators'>
 					<Layout>
 						<Educators />
 					</Layout>
 				</Route>
 
-				<Route exatc path='/create-course'>
+				<Route exact path='/create-course'>
 					<Layout>
 						<CreateCourse />
 					</Layout>
 				</Route>
 
-				<Route exatc path='/forums'>
+				<Route exact path='/forums'>
 					<Layout>
 						<Forums />
 					</Layout>
 				</Route>
 
-				<Route exatc path='/create-forum'>
+				<Route exact path='/create-forum'>
 					<Layout>
 						<CreateForum />
+					</Layout>
+				</Route>
+
+				<Route exact path='/share'>
+					<Layout>
+						<ShareOptions />
+					</Layout>
+				</Route>
+
+				<Route exact path='/share/links'>
+					<Layout>
+						<ShareLinks />
+					</Layout>
+				</Route>
+
+				<Route exact path='/share/docs'>
+					<Layout>
+						<ShareDocs />
+					</Layout>
+				</Route>
+
+				<Route exact path='/share/class'>
+					<Layout>
+						<ShareClass />
 					</Layout>
 				</Route>
 

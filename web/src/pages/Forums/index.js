@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Box from '../../components/Box';
-import Button, { IconButton } from '../../components/Button';
+import Button from '../../components/Button';
 import { H1, H3 } from '../../components/Typography';
 import { Container, Forum as ForumContainer, Tag, BoxContent } from './styles';
-
-import { GrAdd } from 'react-icons/gr';
 
 const Forum = () => {
 	return (
