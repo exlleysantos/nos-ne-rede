@@ -339,6 +339,77 @@ export const Error = styled.span`
 	font-weight: 500;
 `;
 
+export const RadioContainer = styled.div`
+	margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	max-width: max-content;
+
+	&:hover {
+		& > div.input {
+			border-color: var(--purple);
+		}
+
+		& > label {
+			color: var(--purple);
+		}
+	}
+
+	& > div.input {
+		cursor: pointer;
+		border: 1px solid var(--heading-1);
+		border-radius: 100%;
+		width: 24px;
+		height: 24px;
+		min-width: 24px;
+		min-height: 24px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		& > .check {
+			width: 16px;
+			height: 16px;
+			min-width: 16px;
+			min-height: 16px;
+			display: ${({ checked }) => (checked ? 'block' : 'none')};
+			background: var(--purple);
+			border-radius: 100%;
+		}
+	}
+
+	& > label {
+		cursor: pointer;
+		font-size: 14px;
+		font-weight: 400;
+		color: var(--body-1);
+		margin-left: 8px;
+	}
+
+	& input {
+		width: 0;
+		height: 0;
+		pointer-events: none;
+		visibility: hidden;
+	}
+`;
+export const RadioGroup = styled.div`
+	display: flex;
+	flex-direction: column;
+
+	& > label {
+		font-size: 18px;
+		color: var(--heading-1);
+		font-weight: 500;
+		margin-bottom: 4px;
+	}
+
+	& > div {
+		display: flex;
+		flex-direction: column;
+	}
+`;
+
 export const collapseTheme = {
 	collapse: 'ReactCollapse--collapse',
 	content: 'ReactCollapse--content',

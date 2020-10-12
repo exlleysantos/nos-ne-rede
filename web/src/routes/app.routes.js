@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Redirect, Route } from 'react-router-d
 
 import Profile from '../pages/Profile';
 import Educators from '../pages/Educators';
+import CreateActivity from '../pages/CreateActivity';
 import CreateCourse from '../pages/CreateCourse';
 import CreateForum from '../pages/CreateForum';
 import Forums from '../pages/Forums';
@@ -35,6 +36,12 @@ const AuthStack = () => {
 				<Route exact path='/educators'>
 					<Layout>
 						<Educators />
+					</Layout>
+				</Route>
+
+				<Route exact path='/create-activity'>
+					<Layout>
+						<CreateActivity />
 					</Layout>
 				</Route>
 
