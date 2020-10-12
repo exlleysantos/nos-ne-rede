@@ -5,6 +5,7 @@ import Profile from '../pages/Profile';
 import Educators from '../pages/Educators';
 import CreateCourse from '../pages/CreateCourse';
 import CreateForum from '../pages/CreateForum';
+import Forums from '../pages/Forums';
 import Error404 from '../pages/404';
 
 import Layout from '../components/Layout';
@@ -36,6 +37,12 @@ const AuthStack = () => {
 				<Route exatc path='/create-course'>
 					<Layout>
 						<CreateCourse />
+					</Layout>
+				</Route>
+
+				<Route exatc path='/forums'>
+					<Layout>
+						<Forums />
 					</Layout>
 				</Route>
 

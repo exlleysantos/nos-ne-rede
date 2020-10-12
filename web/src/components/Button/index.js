@@ -42,7 +42,7 @@ const Button = ({ children, color, icon: Icon, isGhost, size, loading, disabled,
 	);
 };
 
-const IconButton = ({ icon: Icon, color, variant, loading, disabled, ...rest }) => {
+const IconButton = ({ icon: Icon, color, isGhost, loading, disabled, ...rest }) => {
 	const onClick = (e) => {
 		if (loading || disabled) {
 			return;
@@ -56,13 +56,12 @@ const IconButton = ({ icon: Icon, color, variant, loading, disabled, ...rest }) 
 			{...rest}
 			isIconButton
 			disabled={disabled || loading}
-			color={color || 'primary'}
-			variant={variant || 'default'}
+			isGhost={isGhost}
 			onClick={onClick}>
 			{loading ? (
 				<Loader
 					type='TailSpin'
-					color={getButtonColor(color, variant, 'text')}
+					color={isGhost ? '#8D45E8' : '#FFFFFF'}
 					height={21}
 					width={21}
 					timeout={0}

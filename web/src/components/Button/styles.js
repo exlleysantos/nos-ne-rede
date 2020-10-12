@@ -51,33 +51,27 @@ export const Container = styled.button`
 `;
 
 export const IconButtonContainer = styled.button`
-	background-color: ${({ color, variant }) => getButtonColor(color, variant, 'bg')};
-	border: 1px solid ${({ color, variant }) => getButtonColor(color, variant, 'border')};
-	color: ${({ color, variant }) => getButtonColor(color, variant, 'color')};
-	width: 35px;
-	height: 35px;
-	min-width: 35px;
-	min-height: 35px;
+	background-color: ${({ isGhost }) => (isGhost ? 'transparent' : 'var(--purple)')};
+	border: 1px solid var(--purple);
+	color: ${({ isGhost }) => (isGhost ? 'var(--purple)' : 'var(--white)')};
+	width: 38px;
+	height: 38px;
+	min-width: 38px;
+	min-height: 38px;
 	cursor: pointer;
 	transition: 300ms;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 100%;
+	border-radius: 8px;
 
 	& > svg {
+		color: #FFF;
 		font-size: 19px;
 	}
 
 	& > div.loader {
 		margin-bottom: -2px;
-	}
-
-	&:hover {
-		background-color: ${({ color, variant }) => getButtonColorOnHover(color, variant, 'bg')};
-		border-color: ${({ color, variant }) => getButtonColorOnHover(color, variant, 'border')};
-		color: ${({ color, variant }) => getButtonColorOnHover(color, variant, 'color')};
-		box-shadow: 0px 6px 15px #0000ff30;
 	}
 
 	${({ disabled }) =>
