@@ -227,7 +227,7 @@ export const FileInputContainer = styled.div`
 	position: relative;
 	border: 1px dashed var(--gray-2);
 	cursor: pointer;
-	height: 60px;
+	height: 90px;
 	border-radius: 5px;
 	transition: 300ms;
 

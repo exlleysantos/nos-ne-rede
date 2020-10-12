@@ -106,7 +106,7 @@ const FileInput = ({
 				className='__input'
 				onMouseOver={() => setShowOverlay(true)}
 				onMouseOut={() => setShowOverlay(false)}>
-				<ReactAvatar src={preview} round size={previewSize} name={previewName} />
+				<ReactAvatar src={preview} size={previewSize} name={previewName} />
 
 				<input {...rest} onChange={handlePreview} ref={inputRef} type='file' />
 				<FileInputOverlay show={showOverlay} size={previewSize}>
